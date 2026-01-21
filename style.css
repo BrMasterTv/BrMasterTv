@@ -2,21 +2,17 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', Arial, sans-serif;
+  font-family: "Segoe UI", Arial, sans-serif;
 }
 
 /* FUNDO */
 body {
   color: #fff;
   background:
-    linear-gradient(
-      rgba(0, 0, 0, 0.80),
-      rgba(0, 0, 0, 0.95)
-    ),
+    linear-gradient(rgba(0,0,0,.8), rgba(0,0,0,.95)),
     url("https://696a5adc093e5846cd3b659a.imgix.net/Best%20Netflix%20Background%20Dc.jpg");
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
   background-attachment: fixed;
 }
 
@@ -29,15 +25,14 @@ body {
 .hero h1 {
   font-size: 3em;
   color: #e50914;
-  text-shadow: 0 4px 20px rgba(0,0,0,0.9);
+  text-shadow: 0 4px 20px rgba(0,0,0,.9);
 }
 
 .hero p {
-  margin-top: 10px;
   color: #ccc;
 }
 
-/* PLANOS */
+/* SEÇÕES */
 .plans {
   padding: 40px 20px;
   text-align: center;
@@ -56,38 +51,34 @@ body {
 
 /* ANIMAÇÃO RESPIRAÇÃO */
 @keyframes breathe {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-6px);
-  }
-  100% {
-    transform: translateY(0);
-  }
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
 }
 
 /* CARD */
 .card {
-  background: rgba(20, 20, 20, 0.95);
+  background: rgba(20,20,20,.95);
   padding: 25px;
   border-radius: 15px;
-  box-shadow: 0 0 15px rgba(229,9,20,0.25);
-  transition: transform .3s ease, box-shadow .3s ease;
+  box-shadow: 0 0 15px rgba(229,9,20,.25);
 
-  animation: breathe 8s ease-in-out infinite;
+  animation: breathe 10s ease-in-out infinite;
+  transition: transform .3s ease, box-shadow .3s ease;
+  will-change: transform;
 }
 
-/* DELAYS (efeito natural) */
+/* DELAYS */
 .card:nth-child(1) { animation-delay: 0s; }
-.card:nth-child(2) { animation-delay: 2s; }
-.card:nth-child(3) { animation-delay: 4s; }
-.card:nth-child(4) { animation-delay: 6s; }
+.card:nth-child(2) { animation-delay: 2.5s; }
+.card:nth-child(3) { animation-delay: 5s; }
+.card:nth-child(4) { animation-delay: 7.5s; }
 
-/* HOVER */
+/* HOVER (PAUSA A RESPIRAÇÃO) */
 .card:hover {
-  transform: translateY(-12px) scale(1.03);
-  box-shadow: 0 0 25px rgba(229,9,20,0.6);
+  animation-play-state: paused;
+  transform: translateY(-14px) scale(1.03);
+  box-shadow: 0 0 25px rgba(229,9,20,.6);
 }
 
 .card h3 {
@@ -105,7 +96,9 @@ body {
   margin-top: 5px;
 }
 
+/* BOTÃO */
 .card button {
+  margin-top: 15px;
   padding: 10px 20px;
   border: none;
   border-radius: 30px;
@@ -122,7 +115,7 @@ body {
 .info {
   padding: 40px 20px;
   text-align: center;
-  background: rgba(0,0,0,0.85);
+  background: rgba(0,0,0,.85);
 }
 
 .info p {
@@ -141,5 +134,5 @@ body {
   padding: 15px 18px;
   border-radius: 50%;
   text-decoration: none;
-  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  box-shadow: 0 0 15px rgba(0,0,0,.5);
 }
