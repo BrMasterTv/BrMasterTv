@@ -49,11 +49,22 @@ body {
   gap: 20px;
 }
 
-/* ANIMAÇÃO RESPIRAÇÃO */
-@keyframes breathe {
-  0%   { transform: translateY(0); }
-  50%  { transform: translateY(-6px); }
-  100% { transform: translateY(0); }
+/* 🔴 ANIMAÇÃO: CARD ATIVO (BRILHO DE CLIQUE) */
+@keyframes activeGlow {
+  0% {
+    transform: translateY(0);
+    box-shadow: 0 0 15px rgba(229,9,20,.25);
+  }
+  50% {
+    transform: translateY(-6px);
+    box-shadow:
+      0 0 25px rgba(229,9,20,.55),
+      0 0 45px rgba(229,9,20,.35);
+  }
+  100% {
+    transform: translateY(0);
+    box-shadow: 0 0 15px rgba(229,9,20,.25);
+  }
 }
 
 /* CARD */
@@ -61,24 +72,25 @@ body {
   background: rgba(20,20,20,.95);
   padding: 25px;
   border-radius: 15px;
-  box-shadow: 0 0 15px rgba(229,9,20,.25);
 
-  animation: breathe 10s ease-in-out infinite;
+  animation: activeGlow 12s ease-in-out infinite;
   transition: transform .3s ease, box-shadow .3s ease;
-  will-change: transform;
+  will-change: transform, box-shadow;
 }
 
-/* DELAYS */
+/* DELAYS (EFEITO ALEATÓRIO VISUAL) */
 .card:nth-child(1) { animation-delay: 0s; }
-.card:nth-child(2) { animation-delay: 2.5s; }
-.card:nth-child(3) { animation-delay: 5s; }
-.card:nth-child(4) { animation-delay: 7.5s; }
+.card:nth-child(2) { animation-delay: 3s; }
+.card:nth-child(3) { animation-delay: 6s; }
+.card:nth-child(4) { animation-delay: 9s; }
 
-/* HOVER (PAUSA A RESPIRAÇÃO) */
+/* HOVER = CARD SELECIONADO */
 .card:hover {
   animation-play-state: paused;
-  transform: translateY(-14px) scale(1.03);
-  box-shadow: 0 0 25px rgba(229,9,20,.6);
+  transform: translateY(-14px) scale(1.04);
+  box-shadow:
+    0 0 30px rgba(229,9,20,.75),
+    0 0 60px rgba(229,9,20,.5);
 }
 
 .card h3 {
