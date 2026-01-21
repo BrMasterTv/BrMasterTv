@@ -30,7 +30,6 @@ body {
 
 .hero p {
   color: #ccc;
-  margin-top: 10px;
 }
 
 /* SEÇÕES */
@@ -46,11 +45,11 @@ body {
 /* GRID */
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 22px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
 }
 
-/* ANIMAÇÕES */
+/* 🔴 ANIMAÇÃO: CARD ATIVO (BRILHO DE CLIQUE) */
 @keyframes activeGlow {
   0% {
     transform: translateY(0);
@@ -59,8 +58,8 @@ body {
   50% {
     transform: translateY(-6px);
     box-shadow:
-      0 0 30px rgba(229,9,20,.6),
-      0 0 55px rgba(229,9,20,.4);
+      0 0 25px rgba(229,9,20,.55),
+      0 0 45px rgba(229,9,20,.35);
   }
   100% {
     transform: translateY(0);
@@ -68,55 +67,32 @@ body {
   }
 }
 
-@keyframes activeGlowMobile {
-  0% {
-    box-shadow: 0 0 18px rgba(229,9,20,.45);
-  }
-  50% {
-    box-shadow:
-      0 0 40px rgba(229,9,20,.85),
-      0 0 70px rgba(229,9,20,.6);
-  }
-  100% {
-    box-shadow: 0 0 18px rgba(229,9,20,.45);
-  }
-}
-
 /* CARD */
 .card {
   background: rgba(20,20,20,.95);
   padding: 25px;
-  border-radius: 16px;
+  border-radius: 15px;
+
   animation: activeGlow 12s ease-in-out infinite;
   transition: transform .3s ease, box-shadow .3s ease;
   will-change: transform, box-shadow;
 }
 
-/* DELAYS */
+/* DELAYS (EFEITO ALEATÓRIO VISUAL) */
 .card:nth-child(1) { animation-delay: 0s; }
 .card:nth-child(2) { animation-delay: 3s; }
 .card:nth-child(3) { animation-delay: 6s; }
 .card:nth-child(4) { animation-delay: 9s; }
 
-/* HOVER DESKTOP */
-@media (hover: hover) {
-  .card:hover {
-    animation-play-state: paused;
-    transform: translateY(-14px) scale(1.04);
-    box-shadow:
-      0 0 35px rgba(229,9,20,.85),
-      0 0 70px rgba(229,9,20,.6);
-  }
+/* HOVER = CARD SELECIONADO */
+.card:hover {
+  animation-play-state: paused;
+  transform: translateY(-14px) scale(1.04);
+  box-shadow:
+    0 0 30px rgba(229,9,20,.75),
+    0 0 60px rgba(229,9,20,.5);
 }
 
-/* MOBILE */
-@media (hover: none) {
-  .card {
-    animation: activeGlowMobile 9s ease-in-out infinite;
-  }
-}
-
-/* TEXTOS */
 .card h3 {
   font-size: 1.4em;
 }
@@ -129,16 +105,15 @@ body {
 
 .card small {
   display: block;
-  margin-top: 6px;
-  color: #ccc;
+  margin-top: 5px;
 }
 
 /* BOTÃO */
 .card button {
   margin-top: 15px;
-  padding: 10px 22px;
-  border-radius: 30px;
+  padding: 10px 20px;
   border: none;
+  border-radius: 30px;
   background: #e50914;
   color: #fff;
   cursor: pointer;
@@ -150,14 +125,14 @@ body {
 
 /* INFO */
 .info {
-  padding: 45px 20px;
+  padding: 40px 20px;
   text-align: center;
   background: rgba(0,0,0,.85);
 }
 
 .info p {
   color: #ccc;
-  margin-bottom: 18px;
+  margin-bottom: 15px;
 }
 
 /* WHATSAPP */
