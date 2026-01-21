@@ -6,6 +6,14 @@
   font-family: "Segoe UI", Arial, sans-serif;
 }
 
+/* 🧱 BASE */
+html, body {
+  width: 100%;
+  min-height: 100%;
+  background-color: #0d1117;
+  overscroll-behavior: none;
+}
+
 /* 🎨 PALETA GITHUB */
 :root {
   --bg-main: #0d1117;
@@ -20,15 +28,23 @@
   --text-muted: #8b949e;
 }
 
-/* FUNDO */
-body {
-  color: var(--text-main);
+/* FUNDO FIXO REAL (SEM BUG MOBILE) */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
   background:
-    linear-gradient(rgba(13,17,23,.85), rgba(13,17,23,.95)),
+    linear-gradient(rgba(13,17,23,.9), rgba(13,17,23,.98)),
     url("https://696a5adc093e5846cd3b659a.imgix.net/Best%20Netflix%20Background%20Dc.jpg");
   background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  background-position: center top;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+/* BODY */
+body {
+  color: var(--text-main);
 }
 
 /* HERO */
@@ -64,7 +80,7 @@ body {
   gap: 20px;
 }
 
-/* 🔵 ANIMAÇÃO GITHUB */
+/* 🔵 ANIMAÇÃO */
 @keyframes activeGlow {
   0% {
     transform: translateY(0);
