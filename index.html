@@ -47,7 +47,7 @@
     <div class="card">
       <h3>Anual</h3>
       <p class="price">R$ 200</p>
-      <small class="duration">+ 2 mês</small>
+      <small class="duration">+ 2 meses</small>
       <small class="duration">Economia de R$ 80,00</small>
       <button onclick="whats('Olá! Quero contratar o Plano Anual + 2 meses – 1 Tela – R$200')">
         Assinar
@@ -91,7 +91,7 @@
     <div class="card">
       <h3>Anual</h3>
       <p class="price">R$ 300</p>
-      <small class="duration">+ 2 mês</small>
+      <small class="duration">+ 2 meses</small>
       <small class="duration">Economia de R$ 120,00</small>
       <button onclick="whats('Olá! Quero contratar o Plano Anual + 2 meses – 2 Telas – R$300')">
         Assinar
@@ -129,7 +129,7 @@
 
 <script>
 function whats(texto) {
-  const numero = "5521965204419"; // 55 + DDD + número
+  const numero = "5521965204419";
   const url = `https://wa.me/${numero}?text=${encodeURIComponent(texto)}`;
   window.open(url, "_blank");
 }
