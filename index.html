@@ -2,14 +2,14 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>BrMaster IPTV</title>
+  <title>BrMasterPlay IPTV</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header class="hero">
-  <h1>🎬 BrMaster IPTV</h1>
+  <h1>🎬 BrMasterPlay IPTV</h1>
   <p>Filmes, séries, esportes e canais ao vivo em um só lugar</p>
 </header>
 
@@ -49,13 +49,75 @@
   </div>
 </section>
 
+<section class="plans">
+  <h2>Pacote Duplo (2 Telas)</h2>
+  <div class="cards">
+
+    <div class="card">
+      <h3>Plano Mensal</h3>
+      <p class="price">R$ 30</p>
+      <button onclick="whats('Olá! Quero contratar o Plano Mensal – 2 Telas – R$30')">Assinar</button>
+    </div>
+
+    <div class="card">
+      <h3>Trimestral</h3>
+      <p class="price">R$ 80</p>
+      <small>Economia de R$ 10,00</small>
+      <button onclick="whats('Olá! Quero contratar o Plano Trimestral – 2 Telas – R$80')">Assinar</button>
+    </div>
+
+    <div class="card">
+      <h3>Semestral</h3>
+      <p class="price">R$ 160</p>
+      <small>+ 1 mês</small>
+      <small>Economia de R$ 50,00</small>
+      <button onclick="whats('Olá! Quero contratar o Plano Semestral + 1 mês – 2 Telas – R$160')">Assinar</button>
+    </div>
+
+    <div class="card">
+      <h3>Anual</h3>
+      <p class="price">R$ 300</p>
+      <small>+ 2 meses</small>
+      <small>Economia de R$ 120,00</small>
+      <button onclick="whats('Olá! Quero contratar o Plano Anual + 2 meses – 2 Telas – R$300')">Assinar</button>
+    </div>
+
+  </div>
+</section>
+
+<section class="info">
+  <h2>📡 Principais Canais ao Vivo</h2>
+  <p>
+    Globo • SBT • Record • Band • RedeTV •
+    SporTV • ESPN • Premiere • TNT Sports •
+    Discovery • History • NatGeo
+  </p>
+
+  <h2>🎬 Plataformas de Streaming</h2>
+  <p>
+    Netflix • Prime Video • Disney+ • HBO Max •
+    Globoplay • Star+ • Apple TV+ • Paramount+
+  </p>
+
+  <h2>📱 Compatível com</h2>
+  <p>
+    Smart TV • TV Box • Roku • Android TV •
+    iPhone • Computador • Fire Stick
+  </p>
+</section>
+
 <a class="whatsapp-float" href="#"
-   onclick="whats('Olá! Quero mais informações sobre os planos IPTV')">💬</a>
+   onclick="whats('Olá! Quero mais informações sobre os planos IPTV')">
+  💬
+</a>
 
 <script>
 function whats(texto) {
   const numero = "5521965204419";
-  window.open(`https://wa.me/${numero}?text=${encodeURIComponent(texto)}`, "_blank");
+  window.open(
+    `https://wa.me/${numero}?text=${encodeURIComponent(texto)}`,
+    "_blank"
+  );
 }
 </script>
 
